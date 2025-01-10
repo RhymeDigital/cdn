@@ -91,7 +91,7 @@ var Rhyme = window.Rhyme || {};
 		 * @returns {*}
 		 */
 		getJqEl(el) {
-			return el instanceof jQuery ? el : jQuery(el);
+			return 'jQuery' in window ? (el instanceof window.jQuery ? el : window.jQuery(el)) : el;
 		},
 
 		/**
